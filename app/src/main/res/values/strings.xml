@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">WeatherApp-MVVM-Clean-Architecture</string>
+    <string name="internet_connection">Check Internet Connection !!</string>
+</resources>
