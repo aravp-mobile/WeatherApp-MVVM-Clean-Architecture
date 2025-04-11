@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">WeatherApp-MVVM-Clean-Architecture</string>
     <string name="internet_connection">Check Internet Connection !!</string>
+    <string name="enter_task">Enter task</string>
+    <string name="add_task">Add Task</string>
+    <string name="task_name">Task name</string>
 </resources>

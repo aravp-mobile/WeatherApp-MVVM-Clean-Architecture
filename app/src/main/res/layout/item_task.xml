@@ -27,7 +27,7 @@
             android:id="@+id/tvTaskName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Task name"
+            android:text="@string/task_name"
             android:textSize="16sp"
             app:layout_constraintStart_toEndOf="@id/checkboxCompleted"
             app:layout_constraintTop_toTopOf="parent"

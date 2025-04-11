@@ -1,20 +1,17 @@
 package com.dev.aravp.weatherapp_mvvm_clean_architecture.presentation.ui.task
 
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.liveData
 import androidx.lifecycle.viewModelScope
 import com.dev.aravp.weatherapp_mvvm_clean_architecture.domain.model.Task
 import com.dev.aravp.weatherapp_mvvm_clean_architecture.domain.usecase.AddTaskUseCase
 import com.dev.aravp.weatherapp_mvvm_clean_architecture.domain.usecase.GetTaskUseCase
 import com.dev.aravp.weatherapp_mvvm_clean_architecture.utils.Result
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 @HiltViewModel
@@ -34,13 +31,13 @@ class TaskViewModel @Inject constructor(
         viewModelScope.launch {
             getTaskUseCase.execute()
                 .onStart {
-                    _tasks.value = Result.Loading
+                    _tasks.value = Result.loading()
                 }
                 .catch { e ->
-                    _tasks.value = Result.Error(e)
+                    _tasks.value = Result.error(e)
                 }
                 .collect { taskList ->
-                    _tasks.value = Result.Success(taskList)
+                    _tasks.value = Result.success(taskList)
                 }
         }
     }

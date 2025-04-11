@@ -3,15 +3,14 @@ package com.dev.aravp.weatherapp_mvvm_clean_architecture.presentation.ui.task
 import android.view.View
 import androidx.activity.viewModels
 import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dev.aravp.weatherapp_mvvm_clean_architecture.R
-import com.dev.aravp.weatherapp_mvvm_clean_architecture.utils.Result
 import com.dev.aravp.weatherapp_mvvm_clean_architecture.databinding.ActivityTaskBinding
 import com.dev.aravp.weatherapp_mvvm_clean_architecture.domain.model.Task
 import com.dev.aravp.weatherapp_mvvm_clean_architecture.presentation.ui.base.BaseActivity
+import com.dev.aravp.weatherapp_mvvm_clean_architecture.utils.Result
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
