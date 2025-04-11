@@ -4,12 +4,12 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.dagger.hilt.android)  // Hilt plugin
-    alias(libs.plugins.kapt.android)
+    alias(libs.plugins.kotlin.kapt)
 }
 
 android {
     namespace = "com.dev.aravp.weatherapp_mvvm_clean_architecture"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.dev.aravp.weatherapp_mvvm_clean_architecture"
@@ -59,6 +59,8 @@ dependencies {
     // Navigation Components
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
+    implementation(libs.androidx.lifecycle.livedata.ktx)
+
 
     // Dagger Hilt for Dependency Injection
     implementation(libs.hilt.android)
@@ -79,6 +81,13 @@ dependencies {
     // Hilt for testing
     androidTestImplementation("com.google.dagger:hilt-android-testing:2.44")
     //kaptAndroidTest('com.google.dagger:hilt-android-compiler:2.44')
+
+    // Room
+    implementation(libs.androidx.room.runtime)
+    kapt(libs.androidx.room.compiler)
+
+    // Optional - Kotlin Extensions and Coroutines support for Room
+    implementation(libs.androidx.room.ktx)
 }
 
 /*
